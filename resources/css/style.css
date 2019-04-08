@@ -1,0 +1,77 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+html,
+body {
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato', 'Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+h1,
+.box-origen {
+    width: 70%;
+    margin: 5% 15%;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: justify;
+    margin: 2%;
+}
+
+.box-origen-radio {
+    display: flex;
+    flex-direction: column;
+    margin: 5%
+}
+
+.box-origen-radio-input {
+    display: flex;
+    justify-content: space-around;
+    margin: 1%;
+}
+
+.box-origen-radio-opcional {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1%;
+}
+
+.box-origen-number {
+    display:flex;
+    justify-content: space-evenly;
+    margin: 5%;
+}
+
+.box-origen-number-input {
+    display: flex;
+    flex-direction: column;
+    width: 180px;
+}
+
+.box-origen-number-input > div {
+    display: flex;
+    justify-content: space-between;
+    margin: 1%;
+}
+
+.box-origen-number-input > div > input {
+    width: 60px;
+}
+
+.boton-calcular {
+    display: flex;
+    justify-content: flex-end;
+    margin: 5%;
+}
