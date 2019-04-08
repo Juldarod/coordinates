@@ -33,24 +33,28 @@ h2 {
 .box-origen-radio {
     display: flex;
     flex-direction: column;
-    margin: 5%
+    flex-wrap: wrap;
+    margin: 5%;
 }
 
 .box-origen-radio-input {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin: 1%;
 }
 
 .box-origen-radio-opcional {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     margin: 1%;
 }
 
 .box-origen-number {
     display:flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     margin: 5%;
 }
 
