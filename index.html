@@ -6,104 +6,186 @@
         <title>Coordenadas</title>
     </head>
     <body>
+        <!-- ***************************************************************************************************** -->
         <header>
             <h1>Transformación de coordenadas celestes</h1>
         </header>
 
-        <div class="box-origen">
+        <!-- ***************************************************************************************************** -->
+
+        <div class="latitud">
+            <h2>Latitud del observador</h2>
+            <div id="lat-observador">
+                <div>
+                    <label for="grados-lat">Grados</label>
+                    <input type="number" id="grados-lat" value="0" min="0" max="359" >
+                </div>
+                <div>
+                    <label for="minutos-lat">Minutos</label>
+                    <input type="number" id="minutos-lat" value="0" min="0" max="59" >
+                </div>
+                <div>
+                    <label for="segundos-lat">Segundos</label>
+                    <input type="number" id="segundos-lat" value="0" min="0" max="59" >
+                </div>
+            </div>
+        </div>
+
+        <!-- ***************************************************************************************************** -->
+
+        <div class="coord-origen">
 
             <h2>Coordenadas de origen</h2>
-            <div class="box-origen-radio">
-                
-                <div class="box-origen-radio-input">
+
+            
+            <div class="coord-origen-sistema">
                     <div>
-                        <input type="radio" name="origen" id="ecua-o" value="ecua-o">
+                        <input type="radio" name="sistema-origen" id="ecua-o" value="ecua-o">
                         <label for="ecua-o">Ecuatoriales</label>
                     </div>
                     <div>
-                        <input type="radio" name="origen" id="ecuah-o" value="ecuah-o">
+                        <input type="radio" name="sistema-origen" id="ecuah-o" value="ecuah-o">
                         <label for="ecuah-o">Ecuatoriales horarias</label>
                     </div>
                     <div>
-                        <input type="radio" name="origen" id="hor-o" value="hor-o">
+                        <input type="radio" name="sistema-origen" id="hor-o" value="hor-o">
                         <label for="hor-o">Horizontales</label>
                     </div>
                     <div>
-                        <input type="radio" name="origen" id="ecli-o" value="ecli-o">
+                        <input type="radio" name="sistema-origen" id="ecli-o" value="ecli-o">
                         <label for="ecli-o">Eclípticas</label>
                     </div>
-                </div>
-                
-                <div class="box-origen-radio-opcional">
                     <div>
-                        <input type="radio" name="grados" id="grad-sex-o" value="grad-sex-o" disabled=true>
-                        <label for="grad-sex-o">Grados sexadecimales</label>
+                        <input type="radio" name="sistema-origen" id="galac-o" value="galac-o">
+                        <label for="galac-o">Galácticas</label>
                     </div>
-                    <div>
-                        <input type="radio" name="grados" id="grad-hor-o" value="grad-hor-o" disabled=true>
-                        <label for="grad-hor-o">Grados horarios</label>
-                    </div>
-                </div>
-
             </div>
 
-            <div class="box-origen-number">
-                <div class="box-origen-number-input">
+
+            <div class="coord-origen-tipo-grad">
+                <div>
+                    <input type="radio" name="tipo-grado-origen" id="sexa-o" value="sexa-o" disabled=true>
+                    <label for="sexa-o">Grados sexadecimales</label>
+                </div>
+                <div>
+                    <input type="radio" name="tipo-grado-origen" id="hora-o" value="hora-o" disabled=true>
+                    <label for="hora-o">Grados horarios</label>
+                </div>
+            </div>
+
+
+            <div class="coord-origen-ang-cont">
+                <div class="coord-origen-ang">
                     <div>
-                        <label for="grados">Grados</label>
-                        <input type="number" id="grados" value="0" min="0" max="359" disabled=true>
+                        <label for="grado-hora-oi">Grados</label>
+                        <input type="number" id="grado-hora-oi" value="0" min="0" max="359" disabled=true>
                     </div>
                     <div>
-                        <label for="minutos">Minutos</label>
-                        <input type="number" id="minutos" value="0" min="0" max="59" disabled=true>
+                        <label for="minuto-oi">Minutos</label>
+                        <input type="number" id="minuto-oi" value="0" min="0" max="59" disabled=true>
                     </div>
                     <div>
-                        <label for="segundos">Segundos</label>
-                        <input type="number" id="segundos" value="0" min="0" max="59" disabled=true>                    
+                        <label for="segundo-oi">Segundos</label>
+                        <input type="number" id="segundo-oi" value="0" min="0" max="59" disabled=true>
                     </div>
                 </div>
 
-                <div class="box-origen-number-input">
+                <div class="coord-origen-ang">
                     <div>
-                        <label for="horas">Horas</label>
-                        <input type="number" id="horas" value="0" min="0" max="359" disabled=true>
+                        <label for="grado-hora-od">Grados</label>
+                        <input type="number" id="grado-hora-od" value="0" min="0" max="359" disabled=true>
                     </div>
                     <div>
-                        <label for="minutos-r">Minutos</label>
-                        <input type="number" id="minutos-r" value="0" min="0" max="59" disabled=true>
+                        <label for="minuto-od">Minutos</label>
+                        <input type="number" id="minuto-od" value="0" min="0" max="59" disabled=true>
                     </div>
                     <div>
-                        <label for="segundos-r">Segundos</label>
-                        <input type="number" id="segundos-r" value="0" min="0" max="59" disabled=true>                    
+                        <label for="segundo-od">Segundos</label>
+                        <input type="number" id="segundo-od" value="0" min="0" max="59" disabled=true>
                     </div>
                 </div>
             </div>
+        </div>
+        <!-- ***************************************************************************************************** -->
+
+        <div class="coord-destino">
 
             <h2>Coordenadas de destino</h2>
-            <div class="box-origen-radio">
-                <div class="box-origen-radio-input">
+
+            
+            <div class="coord-destino-sistema">
                     <div>
-                        <input type="radio" name="destino" id="ecua-d" value="ecua-d">
+                        <input type="radio" name="sistema-destino" id="ecua-d" value="ecua-d">
                         <label for="ecua-d">Ecuatoriales</label>
                     </div>
                     <div>
-                        <input type="radio" name="destino" id="ecuah-d" value="ecuah-d">
+                        <input type="radio" name="sistema-destino" id="ecuah-d" value="ecuah-d">
                         <label for="ecuah-d">Ecuatoriales horarias</label>
                     </div>
                     <div>
-                        <input type="radio" name="destino" id="hor-d" value="hor-d">
+                        <input type="radio" name="sistema-destino" id="hor-d" value="hor-d">
                         <label for="hor-d">Horizontales</label>
                     </div>
                     <div>
-                        <input type="radio" name="destino" id="ecli-d" value="ecli-d">
+                        <input type="radio" name="sistema-destino" id="ecli-d" value="ecli-d">
                         <label for="ecli-d">Eclípticas</label>
                     </div>
+                    <div>
+                        <input type="radio" name="sistema-destino" id="galac-d" value="galac-d">
+                        <label for="galac-d">Galácticas</label>
+                    </div>
+            </div>
+
+
+            <div class="coord-destino-tipo-grad">
+                <div>
+                    <input type="radio" name="tipo-grado-destino" id="sexa-d" value="sexa-d" disabled=true>
+                    <label for="sexa-d">Grados sexadecimales</label>
+                </div>
+                <div>
+                    <input type="radio" name="tipo-grado-destino" id="hora-d" value="hora-d" disabled=true>
+                    <label for="hora-d">Grados horarios</label>
                 </div>
             </div>
 
-            <div class="boton-calcular">
-                <button>Calcular</button>
+
+            <div class="coord-destino-ang-cont">
+                <div class="coord-destino-ang">
+                    <div>
+                        <label for="grado-hora-di">Grados</label>
+                        <input type="number" id="grado-hora-di" value="0" min="0" max="359" disabled=true>
+                    </div>
+                    <div>
+                        <label for="minuto-di">Minutos</label>
+                        <input type="number" id="minuto-di" value="0" min="0" max="59" disabled=true>
+                    </div>
+                    <div>
+                        <label for="segundo-di">Segundos</label>
+                        <input type="number" id="segundo-di" value="0" min="0" max="59" disabled=true>
+                    </div>
+                </div>
+
+                <div class="coord-destino-ang">
+                    <div>
+                        <label for="grado-hora-dd">Grados</label>
+                        <input type="number" id="grado-hora-dd" value="0" min="0" max="359" disabled=true>
+                    </div>
+                    <div>
+                        <label for="minuto-dd">Minutos</label>
+                        <input type="number" id="minuto-dd" value="0" min="0" max="59" disabled=true>
+                    </div>
+                    <div>
+                        <label for="segundo-dd">Segundos</label>
+                        <input type="number" id="segundo-dd" value="0" min="0" max="59" disabled=true>
+                    </div>
+                </div>
             </div>
+        </div>
+
+        <!-- ***************************************************************************************************** -->
+
+        <div class="boton-calcular">
+                <button>Calcular</button>
         </div>
 
         <template>test</template>

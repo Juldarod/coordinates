@@ -16,7 +16,7 @@ body {
 }
 
 h1,
-.box-origen {
+body {
     width: 70%;
     margin: 5% 15%;
 }
@@ -30,48 +30,68 @@ h2 {
     margin: 2%;
 }
 
-.box-origen-radio {
+.latitud {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    margin: 5%;
+    align-items: center;
 }
 
-.box-origen-radio-input {
+#lat-observador {
+    width: 100%;
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
-    margin: 1%;
 }
 
-.box-origen-radio-opcional {
+.coord-origen,
+.coord-destino {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coord-origen-sistema,
+.coord-destino-sistema {
+    margin: 1%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin: 1%;
 }
 
-.box-origen-number {
-    display:flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+.coord-origen-tipo-grad,
+.coord-destino-tipo-grad {
+    width: 100%;
+    margin: 1%;
+    display: flex;
+    justify-content: center;
+}
+
+.coord-origen-tipo-grad >div,
+.coord-destino-tipo-grad >div {
+    margin: 1%;
+ }
+
+.coord-origen-ang-cont,
+.coord-destino-ang-cont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.coord-origen-ang,
+.coord-destino-ang {
+    width: 20%;
     margin: 5%;
 }
 
-.box-origen-number-input {
-    display: flex;
-    flex-direction: column;
-    width: 180px;
-}
-
-.box-origen-number-input > div {
+.coord-origen-ang > div,
+.coord-destino-ang > div {
     display: flex;
     justify-content: space-between;
-    margin: 1%;
 }
 
-.box-origen-number-input > div > input {
-    width: 60px;
+.coord-origen-ang > div > input,
+.coord-destino-ang > div > input {
+    width: 80px;
 }
 
 .boton-calcular {
