@@ -28,6 +28,7 @@ h1 {
 h2 {
     text-align: justify;
     margin: 2%;
+    margin-top: 5%;
 }
 
 .latitud {
@@ -79,12 +80,20 @@ h2 {
 
 .coord-origen-ang,
 .coord-destino-ang {
-    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     margin: 5%;
+}
+
+.coord-origen-ang > label,
+.coord-destino-ang > label {
+    margin-bottom: 5%;
 }
 
 .coord-origen-ang > div,
 .coord-destino-ang > div {
+    width: 200px;
     display: flex;
     justify-content: space-between;
 }

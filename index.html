@@ -62,22 +62,11 @@
             </div>
 
 
-            <div class="coord-origen-tipo-grad">
-                <div>
-                    <input type="radio" name="tipo-grado-origen" id="sexa-o" value="sexa-o" disabled=true>
-                    <label for="sexa-o">Grados sexadecimales</label>
-                </div>
-                <div>
-                    <input type="radio" name="tipo-grado-origen" id="hora-o" value="hora-o" disabled=true>
-                    <label for="hora-o">Grados horarios</label>
-                </div>
-            </div>
-
-
             <div class="coord-origen-ang-cont">
                 <div class="coord-origen-ang">
+                    <label id="label-origen-i"></label>
                     <div>
-                        <label for="grado-hora-oi">Grados</label>
+                        <label id="label-grad-oi" for="grado-hora-oi">Grados</label>
                         <input type="number" id="grado-hora-oi" value="0" min="0" max="359" disabled=true>
                     </div>
                     <div>
@@ -91,8 +80,9 @@
                 </div>
 
                 <div class="coord-origen-ang">
+                    <label id="label-origen-d"></label>
                     <div>
-                        <label for="grado-hora-od">Grados</label>
+                        <label id="label-grad-od" for="grado-hora-od">Grados</label>
                         <input type="number" id="grado-hora-od" value="0" min="0" max="359" disabled=true>
                     </div>
                     <div>
@@ -103,6 +93,18 @@
                         <label for="segundo-od">Segundos</label>
                         <input type="number" id="segundo-od" value="0" min="0" max="59" disabled=true>
                     </div>
+                </div>
+            </div>
+
+
+            <div class="coord-origen-tipo-grad">
+                <div>
+                    <input type="radio" name="tipo-grado-origen" id="sexa-o" value="sexa-o" disabled=true>
+                    <label for="sexa-o">Grados sexadecimales</label>
+                </div>
+                <div>
+                    <input type="radio" name="tipo-grado-origen" id="hora-o" value="hora-o" disabled=true>
+                    <label for="hora-o">Grados horarios</label>
                 </div>
             </div>
         </div>
@@ -137,22 +139,11 @@
             </div>
 
 
-            <div class="coord-destino-tipo-grad">
-                <div>
-                    <input type="radio" name="tipo-grado-destino" id="sexa-d" value="sexa-d" disabled=true>
-                    <label for="sexa-d">Grados sexadecimales</label>
-                </div>
-                <div>
-                    <input type="radio" name="tipo-grado-destino" id="hora-d" value="hora-d" disabled=true>
-                    <label for="hora-d">Grados horarios</label>
-                </div>
-            </div>
-
-
             <div class="coord-destino-ang-cont">
                 <div class="coord-destino-ang">
+                    <label id="label-destino-i"></label>
                     <div>
-                        <label for="grado-hora-di">Grados</label>
+                        <label id="label-grad-di" for="grado-hora-di">Grados</label>
                         <input type="number" id="grado-hora-di" value="0" min="0" max="359" disabled=true>
                     </div>
                     <div>
@@ -166,8 +157,9 @@
                 </div>
 
                 <div class="coord-destino-ang">
+                    <label id="label-destino-d"></label>
                     <div>
-                        <label for="grado-hora-dd">Grados</label>
+                        <label id="label-grad-dd" for="grado-hora-dd">Grados</label>
                         <input type="number" id="grado-hora-dd" value="0" min="0" max="359" disabled=true>
                     </div>
                     <div>
@@ -180,12 +172,25 @@
                     </div>
                 </div>
             </div>
+
+
+            <div class="coord-destino-tipo-grad">
+                <div>
+                    <input type="radio" name="tipo-grado-destino" id="sexa-d" value="sexa-d" disabled=true>
+                    <label for="sexa-d">Grados sexadecimales</label>
+                </div>
+                <div>
+                    <input type="radio" name="tipo-grado-destino" id="hora-d" value="hora-d" disabled=true>
+                    <label for="hora-d">Grados horarios</label>
+                </div>
+            </div>
+            
         </div>
 
         <!-- ***************************************************************************************************** -->
 
         <div class="boton-calcular">
-                <button>Calcular</button>
+                <button id="btn-cal">Calcular</button>
         </div>
 
         <template>test</template>
