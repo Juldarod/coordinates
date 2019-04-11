@@ -235,4 +235,109 @@ radioSexaD.addEventListener('click',
 // ****************************************************************************************************
 // ****************************************************************************************************
 // ****************************************************************************************************
+const latitud = gradToRad(parseFloat(gradoLat), parseFloat(minutoLat), parseFloat(segundoLat));
 
+const anguloGradOI = gradtoRad(parseFloat(gradoOI), parseFloat(minutoOI), parseFloat(segundoOI));
+const anguloGradDI = gradtoRad(parseFloat(gradoDI), parseFloat(minutoDI), parseFloat(segundoDI));
+const anguloGradOD = gradtoRad(parseFloat(gradoOD), parseFloat(minutoOD), parseFloat(segundoOD));
+const anguloGradDD = gradtoRad(parseFloat(gradoDD), parseFloat(minutoDD), parseFloat(segundoDD));
+
+const anguloHoraOI = horatoRad(parseFloat(gradoOI), parseFloat(minutoOI), parseFloat(segundoOI));
+const anguloHoraDI = horatoRad(parseFloat(gradoDI), parseFloat(minutoDI), parseFloat(segundoDI));
+const anguloHoraOD = horatoRad(parseFloat(gradoOD), parseFloat(minutoOD), parseFloat(segundoOD));
+const anguloHoraDD = horatoRad(parseFloat(gradoDD), parseFloat(minutoDD), parseFloat(segundoDD));
+
+const E = 23.5;
+
+const gradToRad = (grado, minuto, segundo) => {
+    return (parseFloat(grado) + (parseFloat(minuto) / 60) + (parseFloat(segundo) / 3600)) * Math.PI / 180; 
+}
+
+function horaToRad (hora, minuto, segundo) {
+    return ((parseFloat(hora) + (parseFloat(minuto) / 60) + (parseFloat(segundo) / 3600)) * 360 / 24) * Math.PI / 180;
+}
+
+function horiToEcuah (h, A) {
+    const d = Math.asin(
+        Math.sin(latitud) * Math.sin(h) + 
+        Math.cos(latitud) * Math.cos(h) * Math.cos(A)
+    );
+
+    const H = Math.asin(
+        (Math.sin(A) * Math.cos(h)) / Math.cos(d)
+    ); 
+
+    return [H, d];
+}
+
+function ecuahToHori (d, H) {
+    const h = Math.asin(Math.sin(latitud) * Math.sin(d) +
+        Math.cos(latitud) * Math.cos(d) * Math.cos(H));
+    
+    const A = Math.asin(Math.sin(H)) * Math.cos(d) /
+        Math.cos(h);
+    
+    return [A, h];
+}
+
+function ecuaToEcuah (a, d) {
+    const H = /* s - */ a;
+
+    return [H, d];
+}
+
+function ecuahToecua (H, d) {
+    const a = /* s - */ H;
+
+    return [a, d];
+}
+
+function ecuaToEcli (a, d) {
+    const beta = Math.asin(
+        Math.cos(E) * Math.sin(d) - 
+        Math.sin(E) * Math.cos(d) * Math.sin(a)
+    );
+
+    const lambda = Math.acos(Math.cos(a) * Math.cos(d) / Math.cos(beta));
+
+    return [lambda, beta];
+}
+
+function ecliToEcua (beta, lambda) {
+    const d = Math.asin(
+        Math.cos(E) * Math.sin(beta) + 
+        Math.sin(E) * Math.cos(beta) * Math.sin(lambda)
+    );
+
+    const a = Math.acos(
+        Math.cos(beta) * Math.cos(lambda) / Math.cos(d)
+    );
+
+    return [a, d];
+}
+
+// function galacToEcua (l, b) {
+//     const d = Math.asin(
+//         Math.cos(g) * Math.sin(b) + 
+//         Math.sin(g) * Math.cos(b) * Math.sin(l - o)
+//     );
+
+//     const a = Math.acos(
+//         (Math.cos(b) * Math.cos(l - o)) / Math.cos(d)
+//     ) + an;
+
+//     return [a, d];
+// }
+
+// function ecuaToGalac (a, d) {
+//     const b = Math.asin(
+//         Math.cos(g) * Math.sin(d) - 
+//         Math.sin(g) * Math.cos(d) * Math.sin(a - an)
+//     );
+
+//     const l = Math.acos(
+//         (Math.cos(d) * Math.cos(a - an)) / Math.cos(b)
+//     ) + o;
+
+//     return [l, b];
+// }
